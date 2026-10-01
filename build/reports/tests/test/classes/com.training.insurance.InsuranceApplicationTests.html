@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - InsuranceApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>InsuranceApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.training.insurance.html">com.training.insurance</a> &gt; InsuranceApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.866s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">contextLoads()</td>
+<td class="success">0.866s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre id="class-stdout">14:34:02.815 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.training.insurance.InsuranceApplicationTests]: InsuranceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:34:03.035 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.training.insurance.InsuranceApplication for test class com.training.insurance.InsuranceApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2026-10-01T14:34:04.163+07:00  INFO 11608 --- [    Test worker] c.t.insurance.InsuranceApplicationTests  : Starting InsuranceApplicationTests using Java 17.0.12 with PID 11608 (started by nguyenduykhanh2 in C:\TCT\Training-DEV5\JAVA\Member_Training\Khanh2ND\Spring boot\insurance-management)
+2026-10-01T14:34:04.166+07:00  INFO 11608 --- [    Test worker] c.t.insurance.InsuranceApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2026-10-01T14:34:05.564+07:00  INFO 11608 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-01T14:34:05.675+07:00  INFO 11608 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 3 JPA repository interfaces.
+2026-10-01T14:34:06.386+07:00  INFO 11608 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-01T14:34:06.864+07:00  INFO 11608 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-10-01T14:34:06.878+07:00  INFO 11608 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-01T14:34:07.342+07:00  INFO 11608 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-01T14:34:07.531+07:00  INFO 11608 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-10-01T14:34:07.629+07:00  INFO 11608 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-01T14:34:08.757+07:00  INFO 11608 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-01T14:34:11.247+07:00  INFO 11608 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    alter table if exists tbl_user 
+       alter column user_sex_division set data type varchar(2)
+2026-10-01T14:34:11.349+07:00  INFO 11608 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-01T14:34:12.115+07:00  WARN 11608 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-01T14:34:12.758+07:00  INFO 11608 --- [    Test worker] c.t.insurance.InsuranceApplicationTests  : Started InsuranceApplicationTests in 9.43 seconds (process running for 11.71)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.2.1</a> at Oct 1, 2026, 2:34:14 PM</p>
+</div>
+</div>
+</body>
+</html>

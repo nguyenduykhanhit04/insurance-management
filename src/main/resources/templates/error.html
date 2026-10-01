@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông báo lỗi hệ thống</title>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <style>
+        .error-card {
+            max-width: 600px;
+            margin: 60px auto;
+            text-align: center;
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #e53e3e;
+        }
+        .error-card h1 {
+            color: #e53e3e;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .error-card p {
+            color: #4a5568;
+            font-size: 16px;
+            margin-bottom: 25px;
+            word-break: break-word;
+        }
+    </style>
+</head>
+<body>
+
+<div class="error-card">
+    <h1>Hệ thống gặp sự cố</h1>
+    <p th:text="${errorMessage != null ? errorMessage : 'Đã xảy ra lỗi trong quá trình xử lý yêu cầu hoặc kết nối cơ sở dữ liệu!'}"></p>
+    <a th:href="@{/login}" class="btn btn-primary">Quay về trang đăng nhập</a>
+</div>
+
+</body>
+</html>

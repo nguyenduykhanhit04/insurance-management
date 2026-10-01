@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MH01 - Đăng nhập</title>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <style>
+        .login-box {
+            max-width: 450px;
+            margin: 80px auto;
+            background: #ffffff;
+            padding: 35px 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        .login-box h2 {
+            text-align: center;
+            color: #17252a;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #2b7a78;
+            padding-bottom: 10px;
+        }
+        .login-box .form-group label {
+            width: 130px;
+        }
+        .btn-login {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Đăng nhập hệ thống</h2>
+
+    <div th:if="${error}" class="alert-error" th:text="${error}"></div>
+
+    <form th:action="@{/login}" method="post">
+        <div class="form-group">
+            <label for="username">Tên đăng nhập</label>
+            <input type="text" id="username" name="username" th:value="${username}" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Mật khẩu</label>
+            <input type="password" id="password" name="password" autocomplete="off">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-login">Đăng nhập</button>
+    </form>
+</div>
+
+</body>
+</html>

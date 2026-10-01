@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.training.insurance.InsuranceServiceIntegrationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:34:13.666Z" hostname="NGUYENDUYKHANH2" time="0.668">
+  <properties/>
+  <testcase name="testAuthServiceLoginFail()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.335"/>
+  <testcase name="testDuplicateInsuranceNumberThrowsException()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.021"/>
+  <testcase name="testCreateInsuranceAndFormatName()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.215"/>
+  <testcase name="testSearchInsurancesPagination()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.037"/>
+  <testcase name="testExportCsv()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.043"/>
+  <testcase name="testAuthServiceLoginSuccess()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.008"/>
+  <system-out><![CDATA[2026-10-01T14:34:13.654+07:00  INFO 11608 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.training.insurance.InsuranceServiceIntegrationTest]: InsuranceServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-01T14:34:13.658+07:00  INFO 11608 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.training.insurance.InsuranceApplication for test class com.training.insurance.InsuranceServiceIntegrationTest
+Hibernate: 
+    select
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_user u1_0 
+    where
+        u1_0.username=? 
+        and u1_0.password=?
+Hibernate: 
+    select
+        u1_0.user_internal_id 
+    from
+        tbl_user u1_0 
+    where
+        u1_0.username=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        i1_0.insurance_internal_id 
+    from
+        tbl_insurance i1_0 
+    where
+        i1_0.insurance_number=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        u1_0.user_internal_id 
+    from
+        tbl_user u1_0 
+    where
+        u1_0.username=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        i1_0.insurance_internal_id 
+    from
+        tbl_insurance i1_0 
+    where
+        i1_0.insurance_number=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        c1_0.company_internal_id,
+        c1_0.address,
+        c1_0.company_name,
+        c1_0.email,
+        c1_0.telephone 
+    from
+        tbl_company c1_0 
+    where
+        c1_0.company_internal_id=?
+Hibernate: 
+    insert 
+    into
+        tbl_insurance
+        (insurance_end_date, insurance_number, insurance_start_date, place_of_register, insurance_internal_id) 
+    values
+        (?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        tbl_user
+        (birthdate, company_internal_id, insurance_internal_id, password, user_full_name, user_sex_division, username, user_internal_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_user u1_0 
+    join
+        tbl_insurance i1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        u1_0.company_internal_id=? 
+        and lower(i1_0.insurance_number) like ? escape ''
+Hibernate: 
+    select
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_user u1_0 
+    where
+        u1_0.company_internal_id=?
+Hibernate: 
+    select
+        c1_0.company_internal_id,
+        c1_0.address,
+        c1_0.company_name,
+        c1_0.email,
+        c1_0.telephone 
+    from
+        tbl_company c1_0 
+    where
+        c1_0.company_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        c1_0.company_internal_id,
+        c1_0.address,
+        c1_0.company_name,
+        c1_0.email,
+        c1_0.telephone 
+    from
+        tbl_company c1_0 
+    where
+        c1_0.company_internal_id=?
+Hibernate: 
+    select
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_user u1_0 
+    where
+        u1_0.company_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        i1_0.insurance_internal_id,
+        i1_0.insurance_end_date,
+        i1_0.insurance_number,
+        i1_0.insurance_start_date,
+        i1_0.place_of_register,
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_insurance i1_0 
+    left join
+        tbl_user u1_0 
+            on i1_0.insurance_internal_id=u1_0.insurance_internal_id 
+    where
+        i1_0.insurance_internal_id=?
+Hibernate: 
+    select
+        u1_0.user_internal_id,
+        u1_0.birthdate,
+        u1_0.company_internal_id,
+        u1_0.insurance_internal_id,
+        u1_0.password,
+        u1_0.user_full_name,
+        u1_0.user_sex_division,
+        u1_0.username 
+    from
+        tbl_user u1_0 
+    where
+        u1_0.username=? 
+        and u1_0.password=?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

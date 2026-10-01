@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MH03 - Chi tiết thông tin thẻ bảo hiểm</title>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <style>
+        .detail-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 25px;
+            background: #fafafa;
+            margin-bottom: 25px;
+        }
+        .detail-row {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        .detail-label {
+            width: 220px;
+            font-weight: 600;
+            color: #2b7a78;
+        }
+        .detail-value {
+            flex: 1;
+            color: #2d3748;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #2b7a78;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2>Chi tiết thông tin thẻ bảo hiểm</h2>
+        <a th:href="@{/logout}" class="logout-link">Logout</a>
+    </div>
+
+    <a th:href="@{/insurance(
+            companyId=${criteria.companyId},
+            userFullName=${criteria.userFullName},
+            insuranceNumber=${criteria.insuranceNumber},
+            placeOfRegister=${criteria.placeOfRegister},
+            page=${criteria.page},
+            order=${criteria.order}
+       )}" class="back-link">&larr; Quay lại</a>
+
+    <div class="detail-card">
+        <div class="detail-row">
+            <div class="detail-label">Mã số thẻ bảo hiểm</div>
+            <div class="detail-value" th:text="${insurance.insuranceNumber}"></div>
+        </div>
+
+        <div class="detail-row">
+            <div class="detail-label">Họ và Tên</div>
+            <div class="detail-value" th:text="${insurance.userFullName}"></div>
+        </div>
+
+        <div class="detail-row">
+            <div class="detail-label">Giới tính</div>
+            <div class="detail-value" th:text="${insurance.gender}"></div>
+        </div>
+
+        <div class="detail-row">
+            <div class="detail-label">Ngày sinh</div>
+            <div class="detail-value" th:text="${insurance.birthdate != null ? #temporals.format(insurance.birthdate, 'dd/MM/yyyy') : ''}"></div>
+        </div>
+
+        <div class="detail-row">
+            <div class="detail-label">Tên công ty</div>
+            <div class="detail-value" th:text="${insurance.companyName}"></div>
+        </div>
+
+        <div class="detail-row">
+            <div class="detail-label">Nơi đăng ký KCB</div>
+            <div class="detail-value" th:text="${insurance.placeOfRegister}"></div>
+        </div>
+
+        <div class="detail-row">
+            <div class="detail-label">Kỳ hạn thẻ bảo hiểm</div>
+            <div class="detail-value" th:text="${#temporals.format(insurance.startDate, 'dd/MM/yyyy') + ' đến ' + #temporals.format(insurance.endDate, 'dd/MM/yyyy')}"></div>
+        </div>
+    </div>
+
+    <div class="btn-actions">
+        <form th:action="@{/insurance/delete/{id}(id=${insurance.insuranceId})}" method="post" onsubmit="return confirm('Bạn có chắc chắn muốn xóa thẻ bảo hiểm này?');">
+            <button type="submit" class="btn btn-danger">Xóa</button>
+        </form>
+
+        <a th:href="@{/insurance/edit/{id}(
+                id=${insurance.insuranceId},
+                companyId=${criteria.companyId},
+                userFullName=${criteria.userFullName},
+                insuranceNumber=${criteria.insuranceNumber},
+                placeOfRegister=${criteria.placeOfRegister},
+                page=${criteria.page},
+                order=${criteria.order}
+           )}" class="btn btn-primary">Cập nhật</a>
+    </div>
+</div>
+
+</body>
+</html>

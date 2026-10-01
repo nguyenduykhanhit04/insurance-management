@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${isEdit ? 'MH05 - Cập nhật thẻ bảo hiểm' : 'MH04 - Đăng ký thẻ bảo hiểm'}"></title>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}">
+    <style>
+        .company-toggle-section {
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin: 15px 0 20px 0;
+            background: #fdfdfd;
+        }
+
+        .company-radios {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 25px;
+        }
+
+        .company-radios label {
+            font-weight: 600;
+            color: #2b7a78;
+            cursor: pointer;
+        }
+
+        .company-v1,
+        .company-v2 {
+            padding: 10px 0;
+        }
+
+        .hidden-region {
+            display: none;
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .info-label {
+            width: 160px;
+            color: #4a5568;
+            font-weight: 600;
+        }
+
+        .info-val {
+            color: #1a202c;
+        }
+
+        .date-input {
+            max-width: 220px !important;
+            flex: none !important;
+        }
+
+        .ui-datepicker-trigger {
+            width: 22px;
+            height: 22px;
+            margin-left: 8px;
+            margin-right: 12px;
+            cursor: pointer;
+            vertical-align: middle;
+            transition: transform 0.15s ease;
+            display: inline-block;
+        }
+
+        .ui-datepicker-trigger:hover {
+            transform: scale(1.15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2 th:text="${isEdit ? 'Cập nhật thông tin thẻ bảo hiểm' : 'Đăng ký thông tin thẻ bảo hiểm'}"></h2>
+            <a th:href="@{/logout}" class="logout-link">Logout</a>
+        </div>
+
+        <div th:if="${errorMessage}" class="alert-error" th:text="${errorMessage}"></div>
+
+        <form th:action="${isEdit ? '/insurance/edit' : '/insurance/create'}" th:object="${form}" method="post">
+            
+            <input type="hidden" th:if="${isEdit}" th:field="*{id}">
+            <input type="hidden" th:if="${isEdit}" th:field="*{userId}">
+
+            <div class="form-group">
+                <label for="insuranceNumber">Mã số thẻ bảo hiểm</label>
+                <input type="text" id="insuranceNumber" th:field="*{insuranceNumber}" placeholder="Nhập 10 chữ số"
+                    maxlength="10">
+            </div>
+
+            <div class="form-group">
+                <label for="userFullName">Họ và Tên</label>
+                <input type="text" id="userFullName" th:field="*{userFullName}" placeholder="Ví dụ: Nguyen Van A">
+            </div>
+
+            <div class="form-group">
+                <label>Giới tính</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" th:field="*{userSexDivision}" value="01"> Nam
+                    </label>
+                    <label>
+                        <input type="radio" th:field="*{userSexDivision}" value="02"> Nữ
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">Ngày sinh</label>
+                <input type="text" id="birthdate" class="date-input" th:field="*{birthdate}" placeholder="dd/MM/yyyy">
+            </div>
+
+            <div class="company-toggle-section">
+                <div class="company-radios">
+                    <label>
+                        <input type="radio" id="r1" name="companyType" value="EXIST"
+                            th:checked="${form.companyType == 'EXIST' or form.companyType == null}"
+                            onchange="toggleCompanyRegion()">
+                        Công ty đã có
+                    </label>
+                    <label>
+                        <input type="radio" id="r2" name="companyType" value="NEW"
+                            th:checked="${form.companyType == 'NEW'}" onchange="toggleCompanyRegion()">
+                        Đăng ký theo công ty mới
+                    </label>
+                </div>
+
+                <div id="v1Region" class="company-v1">
+                    <div class="form-group">
+                        <label for="companySelect">Chọn công ty</label>
+                        <select id="companySelect" th:field="*{companyId}" onchange="loadCompanyDetails(this.value)">
+                            <option th:each="c : ${companies}" th:value="${c.companyInternalId}"
+                                th:text="${c.companyName}">
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="company-box" id="companyDetailsBox">
+                        <div class="info-row">
+                            <span class="info-label">Tên công ty:</span>
+                            <span class="info-val" id="dispName">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Địa chỉ:</span>
+                            <span class="info-val" id="dispAddress">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Email:</span>
+                            <span class="info-val" id="dispEmail">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Điện thoại:</span>
+                            <span class="info-val" id="dispTelephone">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="v2Region" class="company-v2 hidden-region">
+                    <div class="form-group">
+                        <label for="newCompanyName">Tên công ty (*)</label>
+                        <input type="text" id="newCompanyName" th:field="*{newCompanyName}">
+                    </div>
+                    <div class="form-group">
+                        <label for="newAddress">Địa chỉ (*)</label>
+                        <input type="text" id="newAddress" th:field="*{newAddress}">
+                    </div>
+                    <div class="form-group">
+                        <label for="newEmail">Email</label>
+                        <input type="text" id="newEmail" th:field="*{newEmail}">
+                    </div>
+                    <div class="form-group">
+                        <label for="newTelephone">Điện thoại</label>
+                        <input type="text" id="newTelephone" th:field="*{newTelephone}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="placeOfRegister">Nơi đăng ký KCB</label>
+                <input type="text" id="placeOfRegister" th:field="*{placeOfRegister}">
+            </div>
+
+            <div class="form-group">
+                <label for="startDate">Ngày bắt đầu thẻ BH</label>
+                <input type="text" id="startDate" class="date-input" th:field="*{startDate}" placeholder="dd/MM/yyyy">
+            </div>
+
+            <div class="form-group">
+                <label for="endDate">Ngày kết thúc thẻ BH</label>
+                <input type="text" id="endDate" class="date-input" th:field="*{endDate}" placeholder="dd/MM/yyyy">
+            </div>
+
+            <div class="btn-actions">
+                
+                <a th:href="@{/insurance(
+                    companyId=${criteria != null ? criteria.companyId : null},
+                    userFullName=${criteria != null ? criteria.userFullName : null},
+                    insuranceNumber=${criteria != null ? criteria.insuranceNumber : null},
+                    placeOfRegister=${criteria != null ? criteria.placeOfRegister : null},
+                    page=${criteria != null ? criteria.page : 0},
+                    order=${criteria != null ? criteria.order : 'ASC'}
+               )}" class="btn btn-secondary">Hủy</a>
+
+                <button type="submit" class="btn btn-primary" th:text="${isEdit ? 'Cập nhật' : 'Đăng ký'}"></button>
+            </div>
+        </form>
+    </div>
+
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/jquery-ui.min.js}"></script>
+
+    <script>
+        $(function () {
+            $.datepicker.setDefaults({
+                dateFormat: 'dd/mm/yy',
+                showOn: 'both',
+                buttonImage: '/images/calendar.svg',
+                buttonImageOnly: true,
+                buttonText: 'Chọn ngày',
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1930:2050',
+                showAnim: 'fadeIn',
+                firstDay: 1,
+                dayNamesMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+                monthNamesShort: ['Th1', 'Th2', 'Th3', 'Th4', 'Th5', 'Th6', 'Th7', 'Th8', 'Th9', 'Th10', 'Th11', 'Th12']
+            });
+
+            $('#birthdate, #startDate, #endDate').datepicker();
+        });
+
+        function toggleCompanyRegion() {
+            const isExist = document.getElementById('r1').checked;
+            const v1 = document.getElementById('v1Region');
+            const v2 = document.getElementById('v2Region');
+
+            if (isExist) {
+                v1.classList.remove('hidden-region');
+                v2.classList.add('hidden-region');
+                const select = document.getElementById('companySelect');
+                if (select && select.value) {
+                    loadCompanyDetails(select.value);
+                }
+            } else {
+                v1.classList.add('hidden-region');
+                v2.classList.remove('hidden-region');
+            }
+        }
+
+        function loadCompanyDetails(companyId) {
+            if (!companyId) return;
+            fetch('/api/companies/' + companyId)
+                .then(res => {
+                    if (!res.ok) throw new Error('Network error');
+                    return res.json();
+                })
+                .then(data => {
+                    document.getElementById('dispName').textContent = data.companyName || '';
+                    document.getElementById('dispAddress').textContent = data.address || '';
+                    document.getElementById('dispEmail').textContent = data.email || '';
+                    document.getElementById('dispTelephone').textContent = data.telephone || '';
+                })
+                .catch(err => console.error('Error fetching company:', err));
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            toggleCompanyRegion();
+            const select = document.getElementById('companySelect');
+            if (select && select.value) {
+                loadCompanyDetails(select.value);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

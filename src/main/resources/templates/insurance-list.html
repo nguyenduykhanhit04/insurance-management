@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MH02 - Danh sách thẻ bảo hiểm</title>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <style>
+        .filter-section {
+            margin-bottom: 20px;
+        }
+        .filter-section label {
+            font-weight: 600;
+            color: #2b7a78;
+            margin-right: 15px;
+        }
+        .filter-section select {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #cbd5e0;
+            min-width: 250px;
+            font-size: 14px;
+        }
+        .not-found-message {
+            text-align: center;
+            padding: 30px;
+            font-size: 16px;
+            color: #718096;
+            font-style: italic;
+            border: 1px dashed #cbd5e0;
+            border-radius: 6px;
+            margin: 20px 0;
+            background: #fafafa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2>Danh sách thẻ bảo hiểm</h2>
+        <a th:href="@{/logout}" class="logout-link">Logout</a>
+    </div>
+
+    <form id="searchForm" th:action="@{/insurance}" method="get">
+        
+        <div class="filter-section">
+            <label for="companySelect">Tên công ty</label>
+            <select id="companySelect" name="companyId" onchange="onCompanyChange()">
+                <option th:each="comp : ${companies}"
+                        th:value="${comp.companyInternalId}"
+                        th:text="${comp.companyName}"
+                        th:selected="${comp.companyInternalId == criteria.companyId}">
+                </option>
+            </select>
+        </div>
+
+        <fieldset>
+            <legend>Thông tin tìm kiếm</legend>
+
+            <div class="form-group">
+                <label for="userFullName">Tên người sử dụng</label>
+                <input type="text" id="userFullName" name="userFullName" th:value="${criteria.userFullName}">
+            </div>
+
+            <div class="form-group">
+                <label for="insuranceNumber">Mã số thẻ bảo hiểm</label>
+                <input type="text" id="insuranceNumber" name="insuranceNumber" th:value="${criteria.insuranceNumber}">
+            </div>
+
+            <div class="form-group">
+                <label for="placeOfRegister">Nơi đăng ký</label>
+                <input type="text" id="placeOfRegister" name="placeOfRegister" th:value="${criteria.placeOfRegister}">
+            </div>
+
+            <input type="hidden" id="orderInput" name="order" th:value="${criteria.order}">
+            <input type="hidden" id="pageInput" name="page" th:value="${criteria.page}">
+
+            <button type="submit" class="btn btn-primary" onclick="document.getElementById('pageInput').value = 0;">Tìm kiếm</button>
+        </fieldset>
+
+        <div class="btn-actions" style="margin-bottom: 20px;">
+            <a th:href="@{/insurance/create(companyId=${criteria.companyId})}" class="btn btn-primary">Đăng ký</a>
+
+            <a th:if="${pageData != null and pageData.totalElements > 0}"
+               th:href="@{/insurance/export-csv(
+                    companyId=${criteria.companyId},
+                    userFullName=${criteria.userFullName},
+                    insuranceNumber=${criteria.insuranceNumber},
+                    placeOfRegister=${criteria.placeOfRegister},
+                    order=${criteria.order}
+               )}"
+               class="btn btn-secondary">Export CSV</a>
+        </div>
+
+        <div th:if="${pageData == null or pageData.totalElements == 0}" class="not-found-message">
+            Không tìm thấy thẻ bảo hiểm
+        </div>
+
+        <div th:if="${pageData != null and pageData.totalElements > 0}">
+            <table class="data-table">
+                <thead>
+                <tr>
+                    <th>
+                        Tên người sử dụng
+                        
+                        <span th:if="${criteria.order == 'ASC'}" class="sort-active" title="Đang sắp xếp tăng dần">▲</span>
+                        <a th:if="${criteria.order != 'ASC'}"
+                           th:href="@{/insurance(companyId=${criteria.companyId}, userFullName=${criteria.userFullName}, insuranceNumber=${criteria.insuranceNumber}, placeOfRegister=${criteria.placeOfRegister}, page=0, order='ASC')}"
+                           onclick="setSortOrder('ASC'); return false;"
+                           class="sort-link" title="Sắp xếp tăng dần">▲</a>
+
+                        <span th:if="${criteria.order == 'DESC'}" class="sort-active" title="Đang sắp xếp giảm dần">▼</span>
+                        <a th:if="${criteria.order != 'DESC'}"
+                           th:href="@{/insurance(companyId=${criteria.companyId}, userFullName=${criteria.userFullName}, insuranceNumber=${criteria.insuranceNumber}, placeOfRegister=${criteria.placeOfRegister}, page=0, order='DESC')}"
+                           onclick="setSortOrder('DESC'); return false;"
+                           class="sort-link" title="Sắp xếp giảm dần">▼</a>
+                    </th>
+                    <th>Giới tính</th>
+                    <th>Ngày sinh</th>
+                    <th>Mã số thẻ bảo hiểm</th>
+                    <th>Kỳ hạn</th>
+                    <th>Nơi đăng ký KCB</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="item : ${pageData.content}">
+                    <td>
+                        <a th:href="@{/insurance/detail/{id}(
+                            id=${item.insuranceId},
+                            companyId=${criteria.companyId},
+                            userFullName=${criteria.userFullName},
+                            insuranceNumber=${criteria.insuranceNumber},
+                            placeOfRegister=${criteria.placeOfRegister},
+                            page=${criteria.page},
+                            order=${criteria.order}
+                        )}" th:text="${item.userFullName}"></a>
+                    </td>
+                    <td th:text="${item.gender}"></td>
+                    <td th:text="${item.birthdate != null ? #temporals.format(item.birthdate, 'dd/MM/yyyy') : ''}"></td>
+                    <td th:text="${item.insuranceNumber}"></td>
+                    <td th:text="${#temporals.format(item.startDate, 'dd/MM/yyyy') + ' ~ ' + #temporals.format(item.endDate, 'dd/MM/yyyy')}"></td>
+                    <td th:text="${item.placeOfRegister}"></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="pagination" th:if="${pageData.totalPages > 1}"
+                 th:with="totalPages=${pageData.totalPages},
+                          currentPage=${pageData.number},
+                          startPage=${(currentPage - 2) < 0 ? 0 : ((currentPage + 2) >= totalPages ? (totalPages - 5 < 0 ? 0 : totalPages - 5) : currentPage - 2)},
+                          endPage=${(startPage + 4) >= totalPages ? totalPages - 1 : startPage + 4}">
+
+                <a th:if="${currentPage > 0}" href="javascript:void(0)" th:onclick="|goToPage(${currentPage - 1})|">&laquo;</a>
+
+                <th:block th:each="p : ${#numbers.sequence(startPage, endPage)}">
+                    <span th:if="${p == currentPage}" class="current-page" th:text="${p + 1}"></span>
+                    <a th:if="${p != currentPage}" href="javascript:void(0)" th:onclick="|goToPage(${p})|" th:text="${p + 1}"></a>
+                </th:block>
+
+                <a th:if="${currentPage < totalPages - 1}" href="javascript:void(0)" th:onclick="|goToPage(${currentPage + 1})|">&raquo;</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    function onCompanyChange() {
+        document.getElementById('userFullName').value = '';
+        document.getElementById('insuranceNumber').value = '';
+        document.getElementById('placeOfRegister').value = '';
+        document.getElementById('pageInput').value = 0;
+        document.getElementById('searchForm').submit();
+    }
+
+    function setSortOrder(order) {
+        document.getElementById('orderInput').value = order;
+        document.getElementById('pageInput').value = 0;
+        document.getElementById('searchForm').submit();
+    }
+
+    function goToPage(page) {
+        document.getElementById('pageInput').value = page;
+        document.getElementById('searchForm').submit();
+    }
+</script>
+
+</body>
+</html>
