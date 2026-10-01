@@ -1,0 +1,70 @@
+1. Định nghĩa lớp(class), đối tượng(object), phương thức(method), trường(fields), thuộc tính(properties) là gì?
+
+2. Biến local, biến instance, biến class là gì?
+
+3. Biến static và biến non-static khác nhau ở điểm nào?
+
+4. Liệt kê các kiểu nguyên thủy trong Java?
+
+5. Kiểu nguyên thủy và kiểu tham chiếu khác nhau như thế nào?
+
+6. Collection API là gì? Lợi thế của ArrayList so với các mảng?
+
+7. Sự khác nhau giữa hai lớp StringBuffer và StringBuilder?
+
+8. Điểm khác nhau giữa throws và throw?
+
+9. Method Overloading là gì? Method Overriding là gì?
+Sự khác nhau giữa Overloading vs Overriding là gì?
+
+10. Điểm khác nhau giữa lệnh break và lệnh continue?
+
+11. Tính kế thừa (Inheritance) là gì?
+
+12. Tính đa hình (Polymorphism) là gì?
+
+13. Tính trừu tượng (Abstraction) là gì?
+
+15. Tính bao đóng (Encapsulation) là gì?
+
+16. Lớp Abstract là gì? Khi nào phương thức abstract được sử dụng?
+
+17. Interface là gì? Một số đặc điểm của Interface?
+
+18. Điểm khác nhau giữa một Interface và một lớp Abstract?
+
+19. Lợi ích chính của tính bao đóng là gì?
+
+20. Điểm khác nhau giữa Constructor và các phương thức khác là gì?
+
+21. Có thể gọi một Constructor này từ Constructor khác nếu một lớp có nhiều Constructor không?
+
+22. Downcasting là gì? Upcasting là gì? Khi nào cần sử dụng downcasting, upcasting?
+
+23. Access Modifier là gì? Có những loại access modifier nào?
+
+24. Nếu một phương thức được khai báo là protected, thì phương thức đó có thể được truy cập ở đâu?
+
+25. Giả sử có các đối tượng và các phương thức của nó như sau
+- Chim : ăn, bay
+- Chó : ăn, chạy
+- Máy bay: bay
+- Ô tô: chạy
+Nếu cần trừu tượng hóa các lớp trên thì bạn sẽ làm thế nào?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

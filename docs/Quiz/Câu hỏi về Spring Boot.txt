@@ -1,0 +1,41 @@
+Câu hỏi về Spring Boot
+
+1. Spring Boot là gì?
+
+2. Lợi ích khi dùng Spring Boot là gì?
+
+3. Có những Build tool nào để phát triển Spring Boot Application?
+
+4. JavaConfig là gì?
+
+5. Làm thế nào để reload thay đổi trên Spring Boot mà không phải restart server?
+
+6. Actuator trong Spring Boot là gì?
+
+7. Làm thế nào để làm việc với database trong Spring Boot?
+
+8. Làm thế nào để viết Test trong Spring Boot?
+
+9. YAML là gì?
+
+10. Làm thế nào để implement security cho Spring boot application?
+
+11. Làm thế nào để implement Pagination và Sorting bằng Spring Boot?
+
+12. Swagger là gì?
+
+13. Spring Batch là gì ? Làm thế nào để implement Spring Batch bằng Spring Boot?
+
+14. Làm thế nào để implement Exception Handling bằng Spring Boot?
+
+15. Làm thế nào để upload file bằng Spring Boot?
+
+16. Làm thế nào để implement interceptor bằng Spring Boot?
+
+17. Làm thế nào để sử dụng scheduler bằng Spring Boot?
+
+18. Làm thế nào để sử dụng Form Login Authentication bằng Spring Boot?
+
+19. Khi nào thì cần dùng WebSockets? Làm thế nào để implement WebSockets bằng Spring Boot?
+
+20. AOP là gì? ? Làm thế nào để sử dụng AOP bằng Spring Boot?

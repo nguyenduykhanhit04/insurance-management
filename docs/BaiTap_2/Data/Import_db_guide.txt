@@ -1,0 +1,16 @@
+﻿Dùng tool SQL để chạy đoạn script trong file /script/import_csv_ to_db.sql
+
+Script sẽ làm những việc sau
+- Create thêm 1 bảng tạm (tbl_temp) để chứa data tương ứng với file data excel.
+- Load data từ file KEN_ALL.CSV vào bảng tbl_temp
+- Xử lý và insert data từ bằng tbl_temp vào bẳng tbl_prefecture
+- Xử lý và insert data từ bằng tbl_temp vào bẳng tbl_city
+- Xử lý và insert data từ bằng tbl_temp vào bẳng tbl_post
+- Xử lý và insert data từ bằng tbl_temp vào bẳng tbl_old_post
+- Xử lý và insert data từ bằng tbl_temp vào bẳng tbl_area
+- Xóa bảng tbl_temp
+
+Nếu chạy gặp lỗi error code: 1148 thì làm như sau:
+Bước 1: Mở mysql workbench chuột phải vào localhost connection chọn edit connection
+Bước 2: Mở tab Advanced và thêm dòng "OPT_LOCAL_INFILE=1" vào mục "others"
+Bước 3: Connect vào db vừa thay đổi chạy query sau: SET GLOBAL local infile = 'ON';
