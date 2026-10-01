@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AuthServiceImpl - Unit Tests" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:14:51.963Z" hostname="PINEAPPLE" time="0.134">
+  <properties/>
+  <testcase name="Login thất bại khi username null → trả về null, không gọi DB" classname="com.training.insurance.service.AuthServiceImplTest" time="0.118"/>
+  <testcase name="Login thất bại khi password null → trả về null, không gọi DB" classname="com.training.insurance.service.AuthServiceImplTest" time="0.002"/>
+  <testcase name="Login với username có khoảng trắng thừa vẫn thành công (trim)" classname="com.training.insurance.service.AuthServiceImplTest" time="0.003"/>
+  <testcase name="Login thành công với username và password hợp lệ" classname="com.training.insurance.service.AuthServiceImplTest" time="0.003"/>
+  <testcase name="Login thất bại khi username rỗng → trả về null, không gọi DB" classname="com.training.insurance.service.AuthServiceImplTest" time="0.001"/>
+  <testcase name="Login thất bại khi username không tồn tại → trả về null" classname="com.training.insurance.service.AuthServiceImplTest" time="0.002"/>
+  <testcase name="Login thất bại khi sai password → trả về null" classname="com.training.insurance.service.AuthServiceImplTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="NameFormatter - Unit Tests" tests="19" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:14:52.274Z" hostname="PINEAPPLE" time="0.041">
+  <properties/>
+  <testcase name="Spec example từ đề bài → Tran Viet Hung" classname="com.training.insurance.util.NameFormatterTest" time="0.001"/>
+  <testcase name="&quot;Tr加加加ầN  2加  vi12Ệt hÙ&amp;*@nG   &quot; → &quot;Tran Viet Hung&quot;" classname="com.training.insurance.util.NameFormatterTest" time="0.001"/>
+  <testcase name="&quot;nguy3n v4n a&quot; → &quot;Nguyn Vn A&quot;" classname="com.training.insurance.util.NameFormatterTest" time="0.001"/>
+  <testcase name="&quot;  vu   duc  &quot; → &quot;Vu Duc&quot;" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="&quot;nguyen&quot; → &quot;Nguyen&quot;" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="Tên 1 chữ cái → viết hoa đúng" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="&quot;nguyen van an&quot; → &quot;Nguyen Van An&quot;" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="&quot;TRAN THI MAI&quot; → &quot;Tran Thi Mai&quot;" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="&quot;DOAN DINH DAT&quot; → &quot;Doan Dinh Dat&quot;" classname="com.training.insurance.util.NameFormatterTest" time="0.001"/>
+  <testcase name="&quot;le thi hoa&quot; → &quot;Le Thi Hoa&quot;" classname="com.training.insurance.util.NameFormatterTest" time="0.001"/>
+  <testcase name="&quot;HO CHI MINH&quot; → &quot;Ho Chi Minh&quot;" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="input=&quot;   &quot; → rỗng" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="input=&quot;&#9;&quot; → rỗng" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="input=&quot;123&quot; → rỗng" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="input=&quot;@#$%&quot; → rỗng" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="&quot;nguyen van an&quot; → &quot;Nguyen Van An&quot;" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="&quot;NGUYEN VAN AN&quot; → &quot;Nguyen Van An&quot;" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="input=null → rỗng" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <testcase name="input= → rỗng" classname="com.training.insurance.util.NameFormatterTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

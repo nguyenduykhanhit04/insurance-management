@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - NameFormatter - Unit Tests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>NameFormatter - Unit Tests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.training.insurance.util.html">com.training.insurance.util</a> &gt; NameFormatterTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">19</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.005s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">&quot;nguyen van an&quot; → &quot;Nguyen Van An&quot;</td>
+<td class="success">formatName_asciiNames_returnsFormatted(String, String)[1]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">&quot;TRAN THI MAI&quot; → &quot;Tran Thi Mai&quot;</td>
+<td class="success">formatName_asciiNames_returnsFormatted(String, String)[2]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">&quot;DOAN DINH DAT&quot; → &quot;Doan Dinh Dat&quot;</td>
+<td class="success">formatName_asciiNames_returnsFormatted(String, String)[3]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">&quot;le thi hoa&quot; → &quot;Le Thi Hoa&quot;</td>
+<td class="success">formatName_asciiNames_returnsFormatted(String, String)[4]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">&quot;HO CHI MINH&quot; → &quot;Ho Chi Minh&quot;</td>
+<td class="success">formatName_asciiNames_returnsFormatted(String, String)[5]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">input=&quot;   &quot; → rỗng</td>
+<td class="success">formatName_noLetters_returnsEmpty(String)[1]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">input=&quot;	&quot; → rỗng</td>
+<td class="success">formatName_noLetters_returnsEmpty(String)[2]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">input=&quot;123&quot; → rỗng</td>
+<td class="success">formatName_noLetters_returnsEmpty(String)[3]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">input=&quot;@#$%&quot; → rỗng</td>
+<td class="success">formatName_noLetters_returnsEmpty(String)[4]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">input=null → rỗng</td>
+<td class="success">formatName_nullOrEmpty_returnsEmpty(String)[1]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">input= → rỗng</td>
+<td class="success">formatName_nullOrEmpty_returnsEmpty(String)[2]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Tên 1 chữ cái → viết hoa đúng</td>
+<td class="success">formatName_singleLetter_returnCapitalized()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Spec example từ đề bài → Tran Viet Hung</td>
+<td class="success">formatName_specExample_returnsCorrectResult()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">&quot;Tr加加加ầN  2加  vi12Ệt hÙ&amp;*@nG   &quot; → &quot;Tran Viet Hung&quot;</td>
+<td class="success">formatName_specialCharsAndNumbers_strippedAndFormatted(String, String)[1]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">&quot;nguy3n v4n a&quot; → &quot;Nguyn Vn A&quot;</td>
+<td class="success">formatName_specialCharsAndNumbers_strippedAndFormatted(String, String)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">&quot;  vu   duc  &quot; → &quot;Vu Duc&quot;</td>
+<td class="success">formatName_specialCharsAndNumbers_strippedAndFormatted(String, String)[3]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">&quot;nguyen&quot; → &quot;Nguyen&quot;</td>
+<td class="success">formatName_specialCharsAndNumbers_strippedAndFormatted(String, String)[4]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">&quot;nguyen van an&quot; → &quot;Nguyen Van An&quot;</td>
+<td class="success">formatName_vietnameseNames_returnsFormatted(String, String)[1]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">&quot;NGUYEN VAN AN&quot; → &quot;Nguyen Van An&quot;</td>
+<td class="success">formatName_vietnameseNames_returnsFormatted(String, String)[2]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.2.1</a> at Oct 1, 2026, 11:14:52 PM</p>
+</div>
+</div>
+</body>
+</html>

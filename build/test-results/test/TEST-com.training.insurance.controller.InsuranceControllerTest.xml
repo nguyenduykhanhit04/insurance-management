@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="InsuranceController - Controller Tests (MockMvc)" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:14:51.710Z" hostname="PINEAPPLE" time="0.198">
+  <properties/>
+  <testcase name="POST /insurance/create - thất bại (AppException) → trở lại form với error" classname="com.training.insurance.controller.InsuranceControllerTest" time="0.081"/>
+  <testcase name="GET /insurance/edit/{id} → trả về form chỉnh sửa" classname="com.training.insurance.controller.InsuranceControllerTest" time="0.02"/>
+  <testcase name="POST /insurance/edit - thành công → redirect về /insurance" classname="com.training.insurance.controller.InsuranceControllerTest" time="0.006"/>
+  <testcase name="POST /insurance/delete/{id} - thành công → redirect về /insurance" classname="com.training.insurance.controller.InsuranceControllerTest" time="0.006"/>
+  <testcase name="POST /insurance/edit - thất bại (AppException) → trở lại form với error" classname="com.training.insurance.controller.InsuranceControllerTest" time="0.011"/>
+  <testcase name="POST /insurance/create - thành công → redirect về /insurance" classname="com.training.insurance.controller.InsuranceControllerTest" time="0.005"/>
+  <testcase name="GET /insurance/detail/{id} → trả về insurance-detail view" classname="com.training.insurance.controller.InsuranceControllerTest" time="0.034"/>
+  <testcase name="GET /insurance/create → trả về form tạo mới" classname="com.training.insurance.controller.InsuranceControllerTest" time="0.01"/>
+  <testcase name="GET /insurance → trả về insurance-list view với danh sách dữ liệu" classname="com.training.insurance.controller.InsuranceControllerTest" time="0.017"/>
+  <system-out><![CDATA[2026-10-01T23:14:51.437+07:00  INFO 25424 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.training.insurance.controller.InsuranceControllerTest]: InsuranceControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-01T23:14:51.445+07:00  INFO 25424 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.training.insurance.InsuranceApplication for test class com.training.insurance.controller.InsuranceControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2026-10-01T23:14:51.466+07:00  INFO 25424 --- [    Test worker] c.t.i.c.InsuranceControllerTest          : Starting InsuranceControllerTest using Java 17.0.14 with PID 25424 (started by ADMIN in D:\Project\jUnit\insurance-management)
+2026-10-01T23:14:51.466+07:00  INFO 25424 --- [    Test worker] c.t.i.c.InsuranceControllerTest          : No active profile set, falling back to 1 default profile: "default"
+2026-10-01T23:14:51.701+07:00  INFO 25424 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-01T23:14:51.701+07:00  INFO 25424 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-01T23:14:51.703+07:00  INFO 25424 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-10-01T23:14:51.708+07:00  INFO 25424 --- [    Test worker] c.t.i.c.InsuranceControllerTest          : Started InsuranceControllerTest in 0.263 seconds (process running for 6.37)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

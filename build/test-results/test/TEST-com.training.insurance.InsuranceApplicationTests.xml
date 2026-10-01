@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.training.insurance.InsuranceApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:34:12.780Z" hostname="NGUYENDUYKHANH2" time="0.866">
+<testsuite name="com.training.insurance.InsuranceApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:14:49.291Z" hostname="PINEAPPLE" time="0.35">
   <properties/>
-  <testcase name="contextLoads()" classname="com.training.insurance.InsuranceApplicationTests" time="0.866"/>
-  <system-out><![CDATA[14:34:02.815 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.training.insurance.InsuranceApplicationTests]: InsuranceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:34:03.035 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.training.insurance.InsuranceApplication for test class com.training.insurance.InsuranceApplicationTests
+  <testcase name="contextLoads()" classname="com.training.insurance.InsuranceApplicationTests" time="0.35"/>
+  <system-out><![CDATA[23:14:46.045 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.training.insurance.InsuranceApplicationTests]: InsuranceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:14:46.102 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.training.insurance.InsuranceApplication for test class com.training.insurance.InsuranceApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,24 +14,24 @@
 
  :: Spring Boot ::                (v3.3.5)
 
-2026-10-01T14:34:04.163+07:00  INFO 11608 --- [    Test worker] c.t.insurance.InsuranceApplicationTests  : Starting InsuranceApplicationTests using Java 17.0.12 with PID 11608 (started by nguyenduykhanh2 in C:\TCT\Training-DEV5\JAVA\Member_Training\Khanh2ND\Spring boot\insurance-management)
-2026-10-01T14:34:04.166+07:00  INFO 11608 --- [    Test worker] c.t.insurance.InsuranceApplicationTests  : No active profile set, falling back to 1 default profile: "default"
-2026-10-01T14:34:05.564+07:00  INFO 11608 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-10-01T14:34:05.675+07:00  INFO 11608 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 3 JPA repository interfaces.
-2026-10-01T14:34:06.386+07:00  INFO 11608 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-10-01T14:34:06.864+07:00  INFO 11608 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2026-10-01T14:34:06.878+07:00  INFO 11608 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-10-01T14:34:07.342+07:00  INFO 11608 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-10-01T14:34:07.531+07:00  INFO 11608 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2026-10-01T14:34:07.629+07:00  INFO 11608 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-10-01T14:34:08.757+07:00  INFO 11608 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-10-01T14:34:11.247+07:00  INFO 11608 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-01T23:14:46.357+07:00  INFO 25424 --- [    Test worker] c.t.insurance.InsuranceApplicationTests  : Starting InsuranceApplicationTests using Java 17.0.14 with PID 25424 (started by ADMIN in D:\Project\jUnit\insurance-management)
+2026-10-01T23:14:46.357+07:00  INFO 25424 --- [    Test worker] c.t.insurance.InsuranceApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2026-10-01T23:14:46.762+07:00  INFO 25424 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-01T23:14:46.809+07:00  INFO 25424 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 3 JPA repository interfaces.
+2026-10-01T23:14:47.073+07:00  INFO 25424 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-01T23:14:47.227+07:00  INFO 25424 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-10-01T23:14:47.229+07:00  INFO 25424 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-01T23:14:47.350+07:00  INFO 25424 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-01T23:14:47.390+07:00  INFO 25424 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-10-01T23:14:47.423+07:00  INFO 25424 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-01T23:14:47.619+07:00  INFO 25424 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-01T23:14:48.276+07:00  INFO 25424 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: 
     alter table if exists tbl_user 
        alter column user_sex_division set data type varchar(2)
-2026-10-01T14:34:11.349+07:00  INFO 11608 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-10-01T14:34:12.115+07:00  WARN 11608 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-10-01T14:34:12.758+07:00  INFO 11608 --- [    Test worker] c.t.insurance.InsuranceApplicationTests  : Started InsuranceApplicationTests in 9.43 seconds (process running for 11.71)
+2026-10-01T23:14:48.315+07:00  INFO 25424 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-01T23:14:48.822+07:00  WARN 25424 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-01T23:14:49.274+07:00  INFO 25424 --- [    Test worker] c.t.insurance.InsuranceApplicationTests  : Started InsuranceApplicationTests in 3.082 seconds (process running for 3.939)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

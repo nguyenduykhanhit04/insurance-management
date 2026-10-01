@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.training.insurance.InsuranceServiceIntegrationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-01T07:34:13.666Z" hostname="NGUYENDUYKHANH2" time="0.668">
+<testsuite name="com.training.insurance.InsuranceServiceIntegrationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:14:49.650Z" hostname="PINEAPPLE" time="0.232">
   <properties/>
-  <testcase name="testAuthServiceLoginFail()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.335"/>
-  <testcase name="testDuplicateInsuranceNumberThrowsException()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.021"/>
-  <testcase name="testCreateInsuranceAndFormatName()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.215"/>
-  <testcase name="testSearchInsurancesPagination()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.037"/>
-  <testcase name="testExportCsv()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.043"/>
-  <testcase name="testAuthServiceLoginSuccess()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.008"/>
-  <system-out><![CDATA[2026-10-01T14:34:13.654+07:00  INFO 11608 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.training.insurance.InsuranceServiceIntegrationTest]: InsuranceServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-10-01T14:34:13.658+07:00  INFO 11608 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.training.insurance.InsuranceApplication for test class com.training.insurance.InsuranceServiceIntegrationTest
+  <testcase name="testAuthServiceLoginFail()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.088"/>
+  <testcase name="testDuplicateInsuranceNumberThrowsException()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.011"/>
+  <testcase name="testCreateInsuranceAndFormatName()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.073"/>
+  <testcase name="testSearchInsurancesPagination()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.022"/>
+  <testcase name="testExportCsv()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.024"/>
+  <testcase name="testAuthServiceLoginSuccess()" classname="com.training.insurance.InsuranceServiceIntegrationTest" time="0.009"/>
+  <system-out><![CDATA[2026-10-01T23:14:49.639+07:00  INFO 25424 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.training.insurance.InsuranceServiceIntegrationTest]: InsuranceServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-01T23:14:49.639+07:00  INFO 25424 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.training.insurance.InsuranceApplication for test class com.training.insurance.InsuranceServiceIntegrationTest
 Hibernate: 
     select
         u1_0.user_internal_id,

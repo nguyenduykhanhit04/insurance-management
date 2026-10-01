@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="InsuranceServiceImpl - Unit Tests" tests="19" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:14:52.177Z" hostname="PINEAPPLE" time="0.092">
+  <properties/>
+  <testcase name="searchInsurances → không có kết quả → trả về Page rỗng" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.045"/>
+  <testcase name="getFormDtoForEdit → map đúng tất cả field sang InsuranceFormRequest" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.003"/>
+  <testcase name="exportCsv → không có dữ liệu → chỉ ghi header" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.002"/>
+  <testcase name="createInsurance → ngày kết thúc trước ngày bắt đầu → ném AppException" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.003"/>
+  <testcase name="getInsuranceDetail → không tìm thấy → ném AppException" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.003"/>
+  <testcase name="createInsurance → số thẻ BH không đúng 10 số → ném AppException" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.002"/>
+  <testcase name="createInsurance → tên người dùng được format đúng (ArgumentCaptor)" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.003"/>
+  <testcase name="createInsurance → họ tên rỗng → ném AppException, không gọi DB" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.002"/>
+  <testcase name="createInsurance → company không tồn tại → ném AppException" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.001"/>
+  <testcase name="exportCsv → ghi đúng header và dữ liệu ra PrintWriter" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.002"/>
+  <testcase name="deleteInsurance → xóa cả user và insurance" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.001"/>
+  <testcase name="updateInsurance thành công → insurance và user được cập nhật" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.004"/>
+  <testcase name="createInsurance → username trùng → ném AppException, không lưu DB" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.002"/>
+  <testcase name="updateInsurance → insurance không tồn tại → ném AppException" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.002"/>
+  <testcase name="createInsurance → số thẻ BH trùng → ném AppException" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.002"/>
+  <testcase name="createInsurance thành công → user và insurance được lưu" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.004"/>
+  <testcase name="deleteInsurance → không có user → chỉ xóa insurance" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.001"/>
+  <testcase name="searchInsurances → có kết quả → trả về Page đúng" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.001"/>
+  <testcase name="getInsuranceDetail → tìm thấy → trả về response đúng các field" classname="com.training.insurance.service.InsuranceServiceImplTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

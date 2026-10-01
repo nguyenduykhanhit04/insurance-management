@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="User entity - Unit Tests" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:14:51.930Z" hostname="PINEAPPLE" time="0.028">
+  <properties/>
+  <testcase name="[1] sex=null" classname="com.training.insurance.entity.UserTest" time="0.012"/>
+  <testcase name="[2] sex=" classname="com.training.insurance.entity.UserTest" time="0.0"/>
+  <testcase name="sexDivision=&quot;01&quot; → &quot;Nam&quot;" classname="com.training.insurance.entity.UserTest" time="0.0"/>
+  <testcase name="sexDivision=&quot;1&quot; → &quot;Nam&quot;" classname="com.training.insurance.entity.UserTest" time="0.001"/>
+  <testcase name="sexDivision=&quot;03&quot; → &quot;&quot;" classname="com.training.insurance.entity.UserTest" time="0.0"/>
+  <testcase name="sexDivision=&quot;99&quot; → &quot;&quot;" classname="com.training.insurance.entity.UserTest" time="0.0"/>
+  <testcase name="sexDivision=&quot;abc&quot; → &quot;&quot;" classname="com.training.insurance.entity.UserTest" time="0.0"/>
+  <testcase name="sexDivision=&quot;02&quot; → &quot;Nữ&quot;" classname="com.training.insurance.entity.UserTest" time="0.0"/>
+  <testcase name="sexDivision=&quot;2&quot; → &quot;Nữ&quot;" classname="com.training.insurance.entity.UserTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

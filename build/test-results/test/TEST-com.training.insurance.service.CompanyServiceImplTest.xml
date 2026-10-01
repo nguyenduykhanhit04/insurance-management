@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CompanyServiceImpl - Unit Tests" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:14:52.099Z" hostname="PINEAPPLE" time="0.076">
+  <properties/>
+  <testcase name="getCompanyById → tìm thấy → trả về company đúng" classname="com.training.insurance.service.CompanyServiceImplTest" time="0.064"/>
+  <testcase name="getAllCompanies → trả về danh sách đúng thứ tự" classname="com.training.insurance.service.CompanyServiceImplTest" time="0.002"/>
+  <testcase name="getAllCompanies → không có dữ liệu → trả về list rỗng" classname="com.training.insurance.service.CompanyServiceImplTest" time="0.004"/>
+  <testcase name="getCompanyById → không tìm thấy → ném AppException" classname="com.training.insurance.service.CompanyServiceImplTest" time="0.001"/>
+  <testcase name="saveCompany → repository ném exception → exception được propagate" classname="com.training.insurance.service.CompanyServiceImplTest" time="0.001"/>
+  <testcase name="saveCompany → lưu thành công → trả về company đã có ID" classname="com.training.insurance.service.CompanyServiceImplTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

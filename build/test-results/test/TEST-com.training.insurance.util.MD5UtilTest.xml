@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MD5Util - Unit Tests" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-01T16:14:52.269Z" hostname="PINEAPPLE" time="0.004">
+  <properties/>
+  <testcase name="md5 của chuỗi cố định → hash đúng 32 ký tự hex" classname="com.training.insurance.util.MD5UtilTest" time="0.001"/>
+  <testcase name="md5 output chỉ chứa ký tự hex lowercase" classname="com.training.insurance.util.MD5UtilTest" time="0.0"/>
+  <testcase name="md5 null → trả về null" classname="com.training.insurance.util.MD5UtilTest" time="0.0"/>
+  <testcase name="md5 của cùng input → luôn trả về cùng hash (deterministic)" classname="com.training.insurance.util.MD5UtilTest" time="0.0"/>
+  <testcase name="md5 của hai input khác nhau → hash khác nhau" classname="com.training.insurance.util.MD5UtilTest" time="0.0"/>
+  <testcase name="md5 chuỗi rỗng → trả về hash hợp lệ" classname="com.training.insurance.util.MD5UtilTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

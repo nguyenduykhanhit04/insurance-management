@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - AuthController - Controller Tests (MockMvc)</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>AuthController - Controller Tests (MockMvc)</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.training.insurance.controller.html">com.training.insurance.controller</a> &gt; AuthControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">8</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.483s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">GET /login không có session → hiển thị trang login</td>
+<td class="success">getLogin_noSession_returnsLoginView()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">GET /login khi đã login → redirect về /insurance</td>
+<td class="success">getLogin_withActiveSession_redirectsToInsurance()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">GET / → redirect về /login</td>
+<td class="success">home_redirectsToLogin()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">GET /logout → session bị hủy → redirect về /login</td>
+<td class="success">logout_withSession_invalidatesSessionAndRedirects()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">POST /login - password rỗng → trả về login view với error message</td>
+<td class="success">postLogin_emptyPassword_returnsLoginWithError()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">POST /login - username rỗng → trả về login view với error message</td>
+<td class="success">postLogin_emptyUsername_returnsLoginWithError()</td>
+<td class="success">0.315s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">POST /login - đúng tài khoản → redirect về /insurance</td>
+<td class="success">postLogin_validCredentials_redirectsToInsurance()</td>
+<td class="success">0.137s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">POST /login - sai tài khoản → trả về login view với error message</td>
+<td class="success">postLogin_wrongCredentials_returnsLoginWithError()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre id="class-stdout">2026-10-01T23:14:49.881+07:00  INFO 25424 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.training.insurance.controller.AuthControllerTest]: AuthControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-01T23:14:49.913+07:00  INFO 25424 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.training.insurance.InsuranceApplication for test class com.training.insurance.controller.AuthControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2026-10-01T23:14:49.932+07:00  INFO 25424 --- [    Test worker] c.t.i.controller.AuthControllerTest      : Starting AuthControllerTest using Java 17.0.14 with PID 25424 (started by ADMIN in D:\Project\jUnit\insurance-management)
+2026-10-01T23:14:49.932+07:00  INFO 25424 --- [    Test worker] c.t.i.controller.AuthControllerTest      : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2026-10-01T23:14:50.375+07:00  INFO 25424 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-01T23:14:50.375+07:00  INFO 25424 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-01T23:14:50.383+07:00  INFO 25424 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-01T23:14:50.393+07:00  INFO 25424 --- [    Test worker] c.t.i.controller.AuthControllerTest      : Started AuthControllerTest in 0.476 seconds (process running for 5.057)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.2.1</a> at Oct 1, 2026, 11:14:52 PM</p>
+</div>
+</div>
+</body>
+</html>

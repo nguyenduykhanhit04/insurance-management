@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - InsuranceServiceImpl - Unit Tests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>InsuranceServiceImpl - Unit Tests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.training.insurance.service.html">com.training.insurance.service</a> &gt; InsuranceServiceImplTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">19</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.084s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">createInsurance → company không tồn tại → ném AppException</td>
+<td class="success">createInsurance_companyNotFound_throwsAppException()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createInsurance → số thẻ BH trùng → ném AppException</td>
+<td class="success">createInsurance_duplicateInsuranceNumber_throwsAppException()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createInsurance → username trùng → ném AppException, không lưu DB</td>
+<td class="success">createInsurance_duplicateUsername_throwsAppException()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createInsurance → họ tên rỗng → ném AppException, không gọi DB</td>
+<td class="success">createInsurance_emptyFullName_throwsAppException()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createInsurance → ngày kết thúc trước ngày bắt đầu → ném AppException</td>
+<td class="success">createInsurance_endDateBeforeStartDate_throwsAppException()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createInsurance → tên người dùng được format đúng (ArgumentCaptor)</td>
+<td class="success">createInsurance_formatsUserFullName()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createInsurance → số thẻ BH không đúng 10 số → ném AppException</td>
+<td class="success">createInsurance_invalidInsuranceNumberFormat_throwsAppException()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createInsurance thành công → user và insurance được lưu</td>
+<td class="success">createInsurance_validForm_savesUserAndInsurance()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">deleteInsurance → xóa cả user và insurance</td>
+<td class="success">deleteInsurance_existingId_deletesUserAndInsurance()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">deleteInsurance → không có user → chỉ xóa insurance</td>
+<td class="success">deleteInsurance_noUser_onlyDeletesInsurance()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">exportCsv → không có dữ liệu → chỉ ghi header</td>
+<td class="success">exportCsv_noData_writesOnlyHeader()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">exportCsv → ghi đúng header và dữ liệu ra PrintWriter</td>
+<td class="success">exportCsv_withData_writesCorrectCsvContent()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getFormDtoForEdit → map đúng tất cả field sang InsuranceFormRequest</td>
+<td class="success">getFormDtoForEdit_existingId_returnsMappedForm()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getInsuranceDetail → tìm thấy → trả về response đúng các field</td>
+<td class="success">getInsuranceDetail_existingId_returnsResponse()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getInsuranceDetail → không tìm thấy → ném AppException</td>
+<td class="success">getInsuranceDetail_notFound_throwsAppException()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">searchInsurances → không có kết quả → trả về Page rỗng</td>
+<td class="success">searchInsurances_noResults_returnsEmptyPage()</td>
+<td class="success">0.045s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">searchInsurances → có kết quả → trả về Page đúng</td>
+<td class="success">searchInsurances_withResults_returnsPage()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateInsurance → insurance không tồn tại → ném AppException</td>
+<td class="success">updateInsurance_insuranceNotFound_throwsAppException()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateInsurance thành công → insurance và user được cập nhật</td>
+<td class="success">updateInsurance_validForm_updatesInsuranceAndUser()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.2.1</a> at Oct 1, 2026, 11:14:52 PM</p>
+</div>
+</div>
+</body>
+</html>
